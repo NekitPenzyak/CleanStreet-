@@ -1,0 +1,118 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff3e9d;
+            --electric-blue: #0abcf9;
+            --acid-green: #a3f736;
+            --deep-purple: #6e0ff5;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .title-font {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+            animation: neon-flicker 3s infinite alternate;
+        }
+
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 10px var(--neon-pink),
+                    0 0 20px var(--neon-pink),
+                    0 0 40px var(--neon-pink);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--deep-purple), var(--electric-blue));
+            background-size: 200% 200%;
+            animation: gradient-shift 8s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .item-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 62, 157, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Card styling */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Button hover effects */
+        button, .btn {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        button:hover, .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Input focus effects */
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--neon-pink);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-pink);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff1a8c;
+        }
+
+        /* FAQ accordion animation */
+        [aria-expanded="true"] .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive typography */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
